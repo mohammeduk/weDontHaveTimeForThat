@@ -1,13 +1,9 @@
-require 'sinatra'
-<<<<<<< HEAD
 require "slack"
 require "yaml"
 require 'dotenv/load'
 require 'pry'
-require 'sinatra/static_assets'
 
-
-helpers do
+class weDontHaveTimeForThat
 
   def get_messages
 
@@ -15,35 +11,22 @@ helpers do
     client = Slack::Client.new token: token
 
     messages = client.pins_list(channel: ENV['GENERAL'])
+    messages_list = []
+
     messages['items'].each do |msg|
       msg_hash = {}
       if msg['type'] == 'message'
         msg_hash[:user_id] = msg['message']['user']
         msg_hash[:message] = msg['message']['text']
       end
-      @@messages << msg_hash
+      messages_list << msg_hash
     end
     users = Hash[client.users_list["members"].map{|m| [m["id"], m["name"]]}]
 
-    photo = Hash[client.users_list["members"].map{|m| [m["id"], m["profile"]["image_original"]]}]
-
-    @@messages.each do |person|
+    messages_list.each do |person|
       person[:username] = users[person[:user_id]]
-      person[:photo] = photo[person[:user_id]]
+      binding.pry
+
     end
-
   end
-
 end
-
-
-get '/' do
-  @@messages = []
-  get_messages
-  erb :index
-end
-
-get '/clock' do
-  erb :clock
-end
-
