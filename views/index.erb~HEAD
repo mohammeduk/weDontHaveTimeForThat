@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="https://use.fontawesome.com/597dd18707.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="logo"></div>
+  <iframe src="clock.html" frameborder="0"></iframe>
+  <div class="mdl-grid">
+  <div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp picture">
+    <figure class="mdl-card__media ">
+      <img src="https://images.unsplash.com/46/3YNGIU4yRTO4DDifrEfA__MG_2885.jpg?crop=entropy&fit=crop&fm=jpg&h=1000&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1925" alt="" />
+    </figure>
+
+
+    <div class="mdl-card__actions mdl-card--border">
+    </div>
+  </div>
+
+  <div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp events">
+
+    <div class="mdl-card__title">
+      <h2>Announcements</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <a class="twitter-timeline" href="https://twitter.com/SpartaGlobal">Tweets by SpartaGlobal</a>
+    </div>
+
+  </div>
+
+  <div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp news">
+    <div class="mdl-card__title">
+      <h2>News</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <div class="rubyStuff-container">
+
+      <div class="ruby-stuff">
+        <% @@messages.each do |info| %>
+        <%= image_tag("#{info[:photo]}", size:"100x100", class: "menu_icon") %>
+          <h3><%= info[:username] %></h3>
+          <img src="" alt="">
+          <p><%= info[:message]%></p>
+          <%sleep 5%>
+        <%end%>
+      </div>
+    </div>
+    </div>
+    <div class="mdl-card__actions ">
+    </div>
+  </div>
+  <div class="social-container">
+<span><i class="fa fa-facebook-square" aria-hidden="true"></i>
+  @spartaglobal</span>
+<span><i class="fa fa-twitter" aria-hidden="true"></i>@SpartaGlobal</span> <span><i class="fa fa-linkedin-square" aria-hidden="true"></i>Sparta Global</span>
+ <span><i class="fa fa-instagram" aria-hidden="true"></i>@spartaglobal</span>
+</div>
+<div class="social-container two">
+<span><i class="fa fa-facebook-square" aria-hidden="true"></i>
+@spartaglobal</span>
+<span><i class="fa fa-twitter" aria-hidden="true"></i>@SpartaGlobal</span> <span><i class="fa fa-linkedin-square" aria-hidden="true"></i>Sparta Global</span>
+<span><i class="fa fa-instagram" aria-hidden="true"></i>@spartaglobal</span>
+</div>
+</div>
+<<<<<<< HEAD
+=======
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+>>>>>>> cafd31983e9f9ea654113ecd38f727fdfb4e3ede
+</body>
+</html>
