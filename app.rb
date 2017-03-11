@@ -6,7 +6,6 @@ require 'dotenv/load'
 require 'pry'
 require 'sinatra/static_assets'
 
-
 helpers do
 
   def get_messages
@@ -24,7 +23,6 @@ helpers do
       @@messages << msg_hash
     end
     users = Hash[client.users_list["members"].map{|m| [m["id"], m["name"]]}]
-
     photo = Hash[client.users_list["members"].map{|m| [m["id"], m["profile"]["image_original"]]}]
 
     @@messages.each do |person|
@@ -32,6 +30,9 @@ helpers do
       person[:photo] = photo[person[:user_id]]
     end
 
+    @@messages.each do |person|
+      person[:username] = users[person[:user_id]]
+    end
   end
 
 end
