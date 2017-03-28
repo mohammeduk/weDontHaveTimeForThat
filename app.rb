@@ -3,7 +3,6 @@ require "slack"
 require "yaml"
 require 'dotenv/load'
 require 'pry'
-require 'sinatra/static_assets'
 
 helpers do
 
