@@ -1,5 +1,4 @@
 require 'sinatra'
-<<<<<<< HEAD
 require "slack"
 require "yaml"
 require 'dotenv/load'
